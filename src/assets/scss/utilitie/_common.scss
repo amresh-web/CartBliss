@@ -1,0 +1,8 @@
+@use './mixins';
+@use './variables';
+@use './fonts';
+@use './extends';
+
+.bg-color {
+  background-color: var(--secondry-color);
+}

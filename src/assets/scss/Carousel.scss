@@ -1,0 +1,21 @@
+@import "../scss/utilitie/mixins";
+
+.react-multi-carousel-item {
+  text-align: center;
+}
+
+.slider {
+  img {
+    width: 100%;
+    height: 100%;
+
+  }
+
+  &.top-mobile {
+    height: 200px;
+
+    img {
+      width: auto;
+    }
+  }
+}
