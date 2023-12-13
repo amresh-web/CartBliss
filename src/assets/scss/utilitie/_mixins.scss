@@ -1,0 +1,240 @@
+// Responsive font size for all screen sizes
+@mixin font-size($base-font-size) {
+  font-size: $base-font-size;
+  line-height: calc(#{$base-font-size} * 1.25);
+
+  @media screen and (max-width: 767px) {
+    font-size: calc(#{$base-font-size} * 0.7);
+    line-height: calc(#{$base-font-size} * 0.9);
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    font-size: calc(#{$base-font-size} * 0.8);
+    line-height: calc(#{$base-font-size} * 1);
+  }
+
+  @media screen and (min-width: 1024px) and (max-width: 1439px) {
+    font-size: calc(#{$base-font-size} * 0.9);
+    line-height: calc(#{$base-font-size} * 1.12);
+  }
+}
+
+// We use this for font color and weight 
+@mixin font-attribute($color, $weight) {
+  color: $color;
+  font-weight: $weight;
+}
+
+// We use this for manage margin and padding for all screen sizes
+@mixin space($property, $values) {
+
+  @media screen and (max-width: 767px) {
+    @if length($values)==1 {
+      #{$property}: calc(#{$values} * 0.5);
+    }
+
+    @else if length($values)==2 {
+      #{$property}-top: calc(#{nth($values, 1)} * 0.5);
+      #{$property}-bottom: calc(#{nth($values, 1)} * 0.5);
+      #{$property}-left: calc(#{nth($values, 2)} * 0.5);
+      #{$property}-right: calc(#{nth($values, 2)} * 0.5);
+    }
+
+    @else if length($values)==3 {
+      #{$property}-top: calc(#{nth($values, 1)} * 0.5);
+      #{$property}-right: calc(#{nth($values, 2)} * 0.5);
+      #{$property}-left: calc(#{nth($values, 2)} * 0.5);
+      #{$property}-bottom: calc(#{nth($values, 3)} * 0.5);
+    }
+
+    @else if length($values)==4 {
+      #{$property}-top: calc(#{nth($values, 1)} * 0.5);
+      #{$property}-right: calc(#{nth($values, 2)} * 0.5);
+      #{$property}-bottom: calc(#{nth($values, 3)} * 0.5);
+      #{$property}-left: calc(#{nth($values, 4)} * 0.5);
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    @if length($values)==1 {
+      #{$property}: calc(#{$values} * 0.8);
+    }
+
+    @else if length($values)==2 {
+      #{$property}-top: calc(#{nth($values, 1)} * 0.8);
+      #{$property}-bottom: calc(#{nth($values, 1)} * 0.8);
+      #{$property}-left: calc(#{nth($values, 2)} * 0.8);
+      #{$property}-right: calc(#{nth($values, 2)} * 0.8);
+    }
+
+    @else if length($values)==3 {
+      #{$property}-top: calc(#{nth($values, 1)} * 0.8);
+      #{$property}-right: calc(#{nth($values, 2)} * 0.8);
+      #{$property}-left: calc(#{nth($values, 2)} * 0.8);
+      #{$property}-bottom: calc(#{nth($values, 3)} * 0.8);
+    }
+
+    @else if length($values)==4 {
+      #{$property}-top: calc(#{nth($values, 1)} * 0.8);
+      #{$property}-right: calc(#{nth($values, 2)} * 0.8);
+      #{$property}-bottom: calc(#{nth($values, 3)} * 0.8);
+      #{$property}-left: calc(#{nth($values, 4)} * 0.8);
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+
+    @if length($values)==1 {
+      #{$property}: calc(#{$values} * 1);
+    }
+
+    @else if length($values)==2 {
+      #{$property}-top: calc(#{nth($values, 1)} * 1);
+      #{$property}-bottom: calc(#{nth($values, 1)} * 1);
+      #{$property}-left: calc(#{nth($values, 2)} * 1);
+      #{$property}-right: calc(#{nth($values, 2)} * 1);
+    }
+
+    @else if length($values)==3 {
+      #{$property}-top: calc(#{nth($values, 1)} * 1);
+      #{$property}-right: calc(#{nth($values, 2)} * 1);
+      #{$property}-left: calc(#{nth($values, 2)} * 1);
+      #{$property}-bottom: calc(#{nth($values, 3)} * 1);
+    }
+
+    @else if length($values)==4 {
+      #{$property}-top: calc(#{nth($values, 1)} * 1);
+      #{$property}-right: calc(#{nth($values, 2)} * 1);
+      #{$property}-bottom: calc(#{nth($values, 3)} * 1);
+      #{$property}-left: calc(#{nth($values, 4)} * 1);
+    }
+  }
+}
+
+// Use this for common button
+@mixin button($background-color, $text-color, $padding, $border, $radius) {
+  background-color: $background-color;
+  color: $text-color;
+  padding: $padding;
+  border: $border;
+  border-radius: $radius;
+  cursor: pointer;
+}
+
+// custom container styles
+@mixin flex-container($direction: null, $justify: null, $align: null) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// Transitions
+@mixin transition($property, $duration, $timing-function: ease) {
+  transition: $property $duration $timing-function;
+}
+
+// box shadows
+@mixin box-shadow($x, $y, $blur, $spread, $color) {
+  box-shadow: $x $y $blur $spread $color;
+}
+
+// border radius
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+// turncate text
+@mixin text-turncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// media query for specific case
+@mixin media-query($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+// Mixin for responsive media queries
+@mixin responsive-media($breakpoint) {
+  @if $breakpoint ==xs-mobile {
+    @media (max-width: 479px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint ==sm-mobile {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint ==tablet {
+    @media (min-width: 768px) and (max-width: 1023px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint ==laptop {
+    @media (min-width: 1024px) and (max-width: 1279px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint ==desktop {
+    @media (min-width: 1280px) {
+      @content;
+    }
+  }
+
+  @else {
+    @media screen {
+      @content;
+    }
+  }
+}
+
+// aspect ratio
+@mixin responsive-ratio($x, $y, $pseudo: false) {
+  $padding: unquote(($y / $x ) * 100 + '%');
+
+  @if $pseudo {
+    &:before {
+      @include pseudo($pos: relative);
+      width: 100%;
+      padding-top: $padding;
+    }
+  }
+
+  @else {
+    padding-top: $padding;
+  }
+}
+
+// placeholder color
+@mixin input-placeholder {
+  &.placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+
+//how to use @include input-placeholder { color: $grey;}
