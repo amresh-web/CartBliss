@@ -6,7 +6,25 @@ const Navigation = () => {
     <>
       <nav className={[style["navbar-nav"], "nav"].join(" ")}>
         <NavLink to={"/"} className={[style["nav-link"], "nav-link"].join(" ")}>
-          Home
+          Smart Phone
+        </NavLink>
+        <NavLink to={"/"} className={[style["nav-link"], "nav-link"].join(" ")}>
+          Television
+        </NavLink>
+        <NavLink to={"/"} className={[style["nav-link"], "nav-link"].join(" ")}>
+          Home Appliances
+        </NavLink>
+        <NavLink to={"/"} className={[style["nav-link"], "nav-link"].join(" ")}>
+          Sound Bar
+        </NavLink>
+        <NavLink to={"/"} className={[style["nav-link"], "nav-link"].join(" ")}>
+          Laptops
+        </NavLink>
+        <NavLink to={"/"} className={[style["nav-link"], "nav-link"].join(" ")}>
+          Kitchen Appliances
+        </NavLink>
+        <NavLink to={"/"} className={[style["nav-link"], "nav-link"].join(" ")}>
+          Camera
         </NavLink>
       </nav>
     </>
