@@ -6,6 +6,10 @@ import Error from "./Error";
 
 const Home = React.lazy(() => import("./pages/Home/Home"));
 const Details = React.lazy(() => import("./components/Common/Details"));
+// const SmartPhones = React.lazy(() =>
+//   import("./pages/smart-phones/SmartPhones")
+// );
+const Kitchen = React.lazy(() => import("./pages/Kitchen/Kitchen"));
 
 const router = createBrowserRouter([
   {
@@ -15,6 +19,8 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: "details", element: <Details /> },
+      //{ path: "smartphones", element: <SmartPhones /> },
+      { path: "kitchen", element: <Kitchen /> },
     ],
   },
 ]);
