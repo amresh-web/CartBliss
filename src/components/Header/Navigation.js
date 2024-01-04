@@ -5,25 +5,46 @@ const Navigation = () => {
   return (
     <>
       <nav className={[style["navbar-nav"], "nav"].join(" ")}>
-        <NavLink to={"/"} className={[style["nav-link"], "nav-link"].join(" ")}>
+        <NavLink
+          to={"smartphones"}
+          className={[style["nav-link"], "nav-link"].join(" ")}
+        >
           Smart Phone
         </NavLink>
-        <NavLink to={"/"} className={[style["nav-link"], "nav-link"].join(" ")}>
+        <NavLink
+          to={"televisions"}
+          className={[style["nav-link"], "nav-link"].join(" ")}
+        >
           Television
         </NavLink>
-        <NavLink to={"/"} className={[style["nav-link"], "nav-link"].join(" ")}>
+        <NavLink
+          to={"home-appliances"}
+          className={[style["nav-link"], "nav-link"].join(" ")}
+        >
           Home Appliances
         </NavLink>
-        <NavLink to={"/"} className={[style["nav-link"], "nav-link"].join(" ")}>
+        <NavLink
+          to={"soundbars"}
+          className={[style["nav-link"], "nav-link"].join(" ")}
+        >
           Sound Bar
         </NavLink>
-        <NavLink to={"/"} className={[style["nav-link"], "nav-link"].join(" ")}>
+        <NavLink
+          to={"laptops"}
+          className={[style["nav-link"], "nav-link"].join(" ")}
+        >
           Laptops
         </NavLink>
-        <NavLink to={"/"} className={[style["nav-link"], "nav-link"].join(" ")}>
+        <NavLink
+          to={"kitchen"}
+          className={[style["nav-link"], "nav-link"].join(" ")}
+        >
           Kitchen Appliances
         </NavLink>
-        <NavLink to={"/"} className={[style["nav-link"], "nav-link"].join(" ")}>
+        <NavLink
+          to={"cameras"}
+          className={[style["nav-link"], "nav-link"].join(" ")}
+        >
           Camera
         </NavLink>
       </nav>
