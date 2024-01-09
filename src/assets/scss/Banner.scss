@@ -1,0 +1,6 @@
+@import "../scss/utilitie/mixins";
+
+.carousel-image{
+    display: none;
+    &.active{display: block;}
+}
