@@ -1,6 +1,6 @@
-import React, { Suspense } from "react";
+import React from "react";
 import "../src/assets/scss/custom.scss";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {createBrowserRouter, RouterProvider} from "react-router-dom"
 import RouteLayout from "./Route";
 import Error from "./Error";
 
@@ -16,33 +16,30 @@ const SoundBar = React.lazy(() => import("./pages/Soundbar/Soundbar"));
 const Laptop = React.lazy(() => import("./pages/Laptop/Laptop"));
 const Camera = React.lazy(() => import("./pages/Camera/Camera"));
 
-const Router = createBrowserRouter([
-  // {
-  //   path: "/",
-  //   element: <RouteLayout />,
-  //   errorElement: <Error />,
-  //   children: [
 
-  //   ],
-  // },
-
-  { path: "/", element: <Home /> },
-  { path: "/details", element: <Details /> },
-  { path: "/smartphones", element: <SmartPhone /> },
-  { path: "/kitchen", element: <Kitchen /> },
-  { path: "/televisions", element: <Television /> },
-  { path: "/home-appliances", element: <HomeAppliances /> },
-  { path: "/soundbars", element: <SoundBar /> },
-  { path: "/laptops", element: <Laptop /> },
-  { path: "/cameras", element: <Camera /> },
-]);
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      element: <RouteLayout />,
+      errorElement: <Error />,
+      children: [
+        {index: true, element: <Home />},
+        {path: 'smartphones', element: <SmartPhone />},
+        {path: 'televisions', element: <Television />},
+        {path: 'details', element:<Details />},
+        {path: 'kitchen', element:<Kitchen />},
+        {path: 'home-appliances', element:<HomeAppliances />},
+        {path: 'soundbars', element:<SoundBar />},
+        {path: 'laptops', element:<Laptop />},
+        {path: 'cameras', element:<Camera />},
+      ]
+    },
+  ])
+
   return (
-    <div className="App">
-      <RouterProvider router={Router} />
-    </div>
-  );
+      <RouterProvider router={router} />
+  )
 }
 
 export default App;

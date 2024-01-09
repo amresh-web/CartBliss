@@ -1,89 +1,75 @@
-import React from "react";
+import React,{useState, useEffect} from "react";
+import "../../assets/scss/Banner.scss"
+
+const smartPhoneBanner = [
+  {
+    key: 0,
+    url: "banner/smartphone1.jpg",
+  },
+  {
+    key: 1,
+    url: "banner/smartphone2.jpg",
+  },
+  {
+    key: 2,
+    url: "banner/smartphone3.jpg",
+  },
+  {
+    key: 3,
+    url: "banner/smartphone4.jpg",
+  }
+];
+
+
 
 const Banner = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(null);
+
+  const MINUTE_MS = 6000;
+
+
+
+const handleNext = () => {
+  setDirection("right");
+  setCurrentIndex((prevIndex) =>
+    prevIndex + 1 === smartPhoneBanner.length ? 0 : prevIndex + 1
+  );
+};
+
+const handlePrevious = () => {
+  setDirection("left");
+
+  setCurrentIndex((prevIndex) =>
+    prevIndex - 1 < 0 ? smartPhoneBanner.length - 1 : prevIndex - 1
+  );
+};
+
+
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, MINUTE_MS);
+  
+    return () => clearInterval(interval); 
+  }, [])
+
   return (
     <>
-      <div
-        id="carouselExampleDark"
-        className="carousel carousel-dark slide"
-        data-bs-ride="carousel"
-      >
-        <div className="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleDark"
-            data-bs-slide-to="0"
-            className="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleDark"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleDark"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
-        </div>
-        <div className="carousel-inner">
-          <div className="carousel-item active" data-bs-interval="10000">
-            <img src="..." className="d-block w-100" alt="..." />
-            <div className="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>
-                Some representative placeholder content for the first slide.
-              </p>
+      <div className="carousel">
+        {smartPhoneBanner.map((data) => {
+          return (
+            <div className={`dot ${currentIndex === data.key ? "carousel-image active" : "carousel-image"}`} key={data.key}>
+              {currentIndex}
+              <img  key={currentIndex} src={data.url} className="d-block w-100" alt="..." />
             </div>
-          </div>
-          <div className="carousel-item" data-bs-interval="2000">
-            <img src="..." className="d-block w-100" alt="..." />
-            <div className="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>
-                Some representative placeholder content for the second slide.
-              </p>
-            </div>
-          </div>
-          <div className="carousel-item">
-            <img src="..." className="d-block w-100" alt="..." />
-            <div className="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>
-                Some representative placeholder content for the third slide.
-              </p>
-            </div>
-          </div>
-        </div>
-        <button
-          className="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleDark"
-          data-bs-slide="prev"
-        >
-          <span
-            className="carousel-control-prev-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button
-          className="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleDark"
-          data-bs-slide="next"
-        >
-          <span
-            className="carousel-control-next-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Next</span>
-        </button>
+          )
+        })}
       </div>
+      <button className="btn" onClick={handlePrevious}>Prev</button>
+      <button className="btn" onClick={handleNext}>Next</button>
+
     </>
   );
 };
