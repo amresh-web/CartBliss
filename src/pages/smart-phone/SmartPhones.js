@@ -1,11 +1,10 @@
-import cate from "../../assets/scss/Category.module.scss";
-import Banner from "../../components/Common/Banner";
+import Category from "../../components/Common/Category";
 
 const SmartPhones = () => {
+  const title = "Smart Phones";
   return (
     <>
-      <h1>Smart Phone</h1>
-      <Banner />
+      <Category title={title} />
     </>
   );
 };
