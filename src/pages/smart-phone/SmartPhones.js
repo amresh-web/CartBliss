@@ -1,11 +1,21 @@
-import cate from "../../assets/scss/Category.module.scss";
-import Banner from "../../components/Common/Banner";
+import Category from "../../components/Common/Category";
 
+const smartPhoneBanner = [
+  {
+    key: 0,
+    url: "banner/smartphone1.jpg",
+  },
+  {
+    key: 1,
+    url: "banner/smartphone4.jpg",
+  }
+];
+const title = "Smart Phones";
 const SmartPhones = () => {
+  
   return (
     <>
-      <h1>Smart Phone</h1>
-      <Banner />
+      <Category title={title} banner={smartPhoneBanner} />
     </>
   );
 };
