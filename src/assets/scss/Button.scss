@@ -1,0 +1,7 @@
+@import './utilitie/mixins';
+
+.btn:hover {
+  background-color: var(--white);
+  border-color: var(--black);
+  color: var(--black);
+}
