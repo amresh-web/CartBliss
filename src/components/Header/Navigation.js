@@ -30,10 +30,10 @@ const Navigation = () => {
           Home Appliances
         </NavLink>
         <NavLink
-          to={"soundbars"}
+          to={"smarthome"}
           className={[style["nav-link"], "nav-link"].join(" ")}
         >
-          Sound Bar
+          Smart Home
         </NavLink>
         <NavLink
           to={"laptops"}

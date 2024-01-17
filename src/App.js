@@ -12,9 +12,10 @@ const Television = React.lazy(() => import("./pages/Television/Television"));
 const HomeAppliances = React.lazy(() =>
   import("./pages/HomeAppliances/HomeAppliances")
 );
-const SoundBar = React.lazy(() => import("./pages/Soundbar/Soundbar"));
+const SmartHome = React.lazy(() => import("./pages/SmartHome/SmartHome"));
 const Laptop = React.lazy(() => import("./pages/Laptop/Laptop"));
 const Camera = React.lazy(() => import("./pages/Camera/Camera"));
+const ProductList = React.lazy(() => import("./components/Common/ProductList"));
 
 
 
@@ -30,9 +31,10 @@ function App() {
         {path: 'details', element:<Details />},
         {path: 'kitchen', element:<Kitchen />},
         {path: 'home-appliances', element:<HomeAppliances />},
-        {path: 'soundbars', element:<SoundBar />},
+        {path: 'smarthome', element:<SmartHome />},
         {path: 'laptops', element:<Laptop />},
         {path: 'cameras', element:<Camera />},
+        {path: 'cameras/:categorySlug', element:<ProductList />},
       ]
     },
   ])
