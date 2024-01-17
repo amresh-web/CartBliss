@@ -3,18 +3,18 @@ import style from "../../assets/scss/Products.module.scss";
 import Button from "./Button";
 
 const Products = (props) => {
-  const mobile = props.mobileData;
+  const datas = props.data;
   return (
     <>
       <div className={"row g-0"}>
-        {mobile.map((data) => {
+        {datas.map((data) => {
           return (
             <div className={"col-12 col-md-6 col-xl-3 mb-3"} key={data.key}>
               <div className={[style.card, "card"].join(" ")}>
                 <div className={[style.card_imag, "text-center"].join(" ")}>
                   <img
                     src={data.url}
-                    className={["img-fluid"].join(" ")}
+                    className={["mh-100 mw-100"].join(" ")}
                     alt="..."
                   />
                 </div>

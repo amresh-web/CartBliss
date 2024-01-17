@@ -88,7 +88,7 @@ const TopHomeAppliances = () => {
           <CarouselSlider
             topMobileData={topMobileData}
             responsive={responsive}
-            customClass={customClass}
+            customClassName={customClass}
           />
         </div>
       </article>

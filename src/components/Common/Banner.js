@@ -53,8 +53,8 @@ const Banner = (props) => {
         })}
 
         <div className="controls">
-          <button className="btn btn-left" onClick={handlePrevious}><i class="bi bi-chevron-left"></i></button>
-          <button className="btn btn-right" onClick={handleNext}><i class="bi bi-chevron-right"></i></button>
+          <button className="btn btn-left" onClick={handlePrevious}><i className="bi bi-chevron-left"></i></button>
+          <button className="btn btn-right" onClick={handleNext}><i className="bi bi-chevron-right"></i></button>
         </div>
       </div>
 

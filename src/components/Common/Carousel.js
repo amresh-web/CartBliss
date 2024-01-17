@@ -13,7 +13,7 @@ const CarouselSlider = (props) => {
         showDots={false}
         infinite={true}
         partialVisible={false}
-        dotListClass="custom-dot-list-style"
+        dotListClassName="custom-dot-list-style"
       >
         {props.topMobileData.map((data, index) => {
           return (
