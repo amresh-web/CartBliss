@@ -7,7 +7,7 @@ import Link from "./Link";
 
 const Category = (props) => {
   const location = useLocation();
-  const catLinks = `${location.pathname}/all`;
+  const catLinks = `/product${location.pathname}`;
   return (
     <>
       <div className={["container-fluid g-0"].join(" ")}>

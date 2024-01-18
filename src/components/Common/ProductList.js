@@ -1,15 +1,12 @@
-import React, {useEffect} from "react";
-import { useParams } from 'react-router-dom';
+import React from "react";
 
-const ProductList = () => {
-    const {categorySlug} = useParams();
-
-    useEffect(() => {
-
-    },[categorySlug])
-    return(<>
-     <h1>Products in {categorySlug} category</h1>
-    </>)
-}
+const ProductList = (props) => {
+  console.log(props.data);
+  return (
+    <>
+      <h1>Products in category</h1>
+    </>
+  );
+};
 
 export default ProductList;
