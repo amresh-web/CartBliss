@@ -33,7 +33,7 @@ function App() {
         { path: "smarthome", element: <SmartHome /> },
         { path: "laptops", element: <Laptop /> },
         { path: "cameras", element: <Camera /> },
-        { path: "smartphones/all", element: <ProductList /> },
+        { path: "product/:name", element: <ProductList /> },
       ],
     },
   ]);
