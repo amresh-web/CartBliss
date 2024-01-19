@@ -1,10 +1,13 @@
 import React from "react";
+import { useLocation, useParams } from "react-router-dom";
+import Products from "./Products";
 
-const ProductList = (props) => {
-  console.log(props.data);
+const ProductList = () => {
+    const receivedData = window.history.state;
+    
   return (
     <>
-      <h1>Products in category</h1>
+        
     </>
   );
 };

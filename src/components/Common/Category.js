@@ -1,20 +1,31 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 import style from "../../assets/scss/Category.module.scss";
 import Banner from "./Banner";
 import Products from "./Products";
-import Link from "./Link";
+import { useLocation, useNavigate, NavLink } from "react-router-dom";
+import Button from "./Button";
 
 const Category = (props) => {
   const location = useLocation();
+  const navigate = useNavigate();
+
   const catLinks = `/product${location.pathname}`;
+
+  const handleClick = () => {
+    const dataToSend = props.data;
+    navigate(catLinks, { state: dataToSend });
+  };
+
+  
+ 
   return (
     <>
       <div className={["container-fluid g-0"].join(" ")}>
         <Banner banner={props.banner} />
         <div className={[style.category].join(" ")}>
           <h1 className={"fs-4 fw-bold text-center my-4"}>{props.title}</h1>
-          <Link name="View All" links={catLinks} />
+          {/* <button className="btn btn-dark rounded-pill px-5 py-2" handleClick={handleClick}>View All</button> */}
+          <Button name="View All" handleClick={handleClick} />
           <Products data={props.data} />
         </div>
       </div>
