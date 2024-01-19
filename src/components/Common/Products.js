@@ -8,6 +8,7 @@ const Products = (props) => {
     <>
       <div className={"row g-0"}>
         {datas.map((data) => {
+          console.log(data.url)
           return (
             <div className={"col-12 col-md-6 col-xl-3 mb-3"} key={data.key}>
               <div className={[style.card, "card"].join(" ")}>
