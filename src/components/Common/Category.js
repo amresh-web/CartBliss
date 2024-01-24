@@ -2,7 +2,7 @@ import React from "react";
 import style from "../../assets/scss/Category.module.scss";
 import Banner from "./Banner";
 import Products from "./Products";
-import { useLocation, useNavigate, NavLink } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Button from "./Button";
 
 const Category = (props) => {
@@ -16,15 +16,12 @@ const Category = (props) => {
     navigate(catLinks, { state: dataToSend });
   };
 
-  
- 
   return (
     <>
       <div className={["container-fluid g-0"].join(" ")}>
         <Banner banner={props.banner} />
         <div className={[style.category].join(" ")}>
           <h1 className={"fs-4 fw-bold text-center my-4"}>{props.title}</h1>
-          {/* <button className="btn btn-dark rounded-pill px-5 py-2" handleClick={handleClick}>View All</button> */}
           <Button name="View All" handleClick={handleClick} />
           <Products data={props.data} />
         </div>
