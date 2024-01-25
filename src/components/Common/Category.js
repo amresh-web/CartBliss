@@ -18,11 +18,13 @@ const Category = (props) => {
 
   return (
     <>
-      <div className={["container-fluid g-0"].join(" ")}>
-        <Banner banner={props.banner} />
+     <Banner banner={props.banner} />
+      <div className={["container-fluid"].join(" ")}>
         <div className={[style.category].join(" ")}>
           <h1 className={"fs-4 fw-bold text-center my-4"}>{props.title}</h1>
-          <Button name="View All" handleClick={handleClick} />
+          <div className={"text-end"}>
+            <Button name="View All" handleClick={handleClick} />
+          </div>
           <Products data={props.data} />
         </div>
       </div>

@@ -1,6 +1,6 @@
 import Category from "../../components/Common/Category";
 import datas from "../../assets/data.json";
-console.log(datas);
+
 const smartPhoneBanner = [
   {
     key: 0,

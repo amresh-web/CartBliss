@@ -1,6 +1,8 @@
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const ProductList = () => {
+    const location = useLocation();
   const receivedData = window.history.state;
   const data = receivedData.usr;
   return (
@@ -14,11 +16,10 @@ const ProductList = () => {
                   <React.Fragment key={brandName}>
                     {data[category][brandName].map((item) => (
                       <div className={"col"} key={item.key}>
-                        <a
-                          href="#"
+                        <Link to={`${location.pathname}/${item.productCode}`} state={{item}}
                           className={"card h-100 text-decoration-none"}
                         >
-                          <div class={"card-body"}>
+                          <div className={"card-body"}>
                             <img
                               className={["mh-100 mw-100"].join(" ")}
                               src={item.url}
@@ -37,7 +38,7 @@ const ProductList = () => {
                           ))}
                         </ul> */}
                           </div>
-                        </a>
+                        </Link>
                       </div>
                     ))}
                   </React.Fragment>

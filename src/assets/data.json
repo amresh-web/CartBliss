@@ -4,6 +4,7 @@
       "samsumg": [
         {
           "key": 0,
+          "productCode": 2312,
           "category": "samsung",
           "name": "Samsung Galaxy S21",
           "price": 39999,
@@ -18,6 +19,7 @@
         },
         {
           "key": 1,
+          "productCode": 2313,
           "category": "samsung",
           "name": "SAMSUNG Galaxy F54 5G",
           "price": "24999",
@@ -32,6 +34,7 @@
         },
         {
           "key": 2,
+          "productCode": 2314,
           "category": "samsung",
           "name": "SAMSUNG Galaxy F34 5G ",
           "price": 18499,
@@ -46,6 +49,7 @@
         },
         {
           "key": 3,
+          "productCode": 2315,
           "category": "samsung",
           "name": "SAMSUNG Galaxy A34 5G",
           "price": 27499,
@@ -63,7 +67,8 @@
     {
       "lg": [
         {
-          "key": 0,
+          "key": 4,
+          "productCode": 2316,
           "category": "lg",
           "name": "LG K42",
           "price": 11649,
@@ -78,7 +83,8 @@
           "url": "/images/mobile/mb-5.webp"
         },
         {
-          "key": 1,
+          "key": 5,
+          "productCode": 2317,
           "category": "lg",
           "name": "LG Optimus L70",
           "price": "12791",
@@ -92,7 +98,8 @@
           "url": "/images/mobile/mb-6.webp"
         },
         {
-          "key": 2,
+          "key": 6,
+          "productCode": 2318,
           "category": "lg",
           "name": "LG Q6+ ",
           "price": 19990,
@@ -106,7 +113,8 @@
           "url": "/images/mobile/mb-7.webp"
         },
         {
-          "key": 3,
+          "key": 7,
+          "productCode": 2319,
           "category": "lg",
           "name": "LG W41",
           "price": 16000,
@@ -127,6 +135,7 @@
       "samsumg": [
         {
           "key": 0,
+          "productCode": 2320,
           "category": "samsung",
           "name": "Samsung Galaxy S21",
           "price": 39999,
@@ -137,10 +146,11 @@
             "4500 mAh Lithium-ion Battery",
             "Snapdragon 888 Processor"
           ],
-          "url": "/images/mobile/mb-5.webp"
+          "url": "/images/television/tv-1.webp"
         },
         {
           "key": 1,
+          "productCode": 2321,
           "category": "samsung",
           "name": "SAMSUNG Galaxy F54 5G",
           "price": "24999",
@@ -151,10 +161,11 @@
             "6000 mAh Battery",
             "Octa Core Processor"
           ],
-          "url": "/images/mobile/mb-1.webp"
+          "url": "/images/television/tv-2.webp"
         },
         {
           "key": 2,
+          "productCode": 2322,
           "category": "samsung",
           "name": "SAMSUNG Galaxy F34 5G ",
           "price": 18499,
@@ -165,10 +176,11 @@
             "6000 mAh Battery",
             "Exynos 1280 Processor"
           ],
-          "url": "/images/mobile/mb-3.webp"
+          "url": "/images/television/tv-3.webp"
         },
         {
           "key": 3,
+          "productCode": 2323,
           "category": "samsung",
           "name": "SAMSUNG Galaxy A34 5G",
           "price": 27499,
@@ -179,14 +191,15 @@
             "5000 mAh Li-ion Battery Battery",
             "Dimensity 1080, Octa Core Processor"
           ],
-          "url": "/images/mobile/mb-8.webp"
+          "url": "/images/television/tv-4.webp"
         }
       ]
     },
     {
       "lg": [
         {
-          "key": 0,
+          "key": 4,
+          "productCode": 2324,
           "category": "lg",
           "name": "LG K42",
           "price": 11649,
@@ -198,10 +211,11 @@
             "MediaTek Helio P22 (MT6762) Processor",
             "Military Standard 810G Certified for Durability"
           ],
-          "url": "/images/mobile/mb-5.webp"
+          "url": "/images/television/tv-5.webp"
         },
         {
-          "key": 1,
+          "key": 5,
+          "productCode": 2325,
           "category": "lg",
           "name": "LG Optimus L70",
           "price": "12791",
@@ -212,10 +226,11 @@
             "2100 mAh Li-Ion Battery",
             "Snapdragon Processor"
           ],
-          "url": "/images/mobile/mb-1.webp"
+          "url": "/images/television/tv-6.webp"
         },
         {
-          "key": 2,
+          "key": 6,
+          "productCode": 2326,
           "category": "lg",
           "name": "LG Q6+ ",
           "price": 19990,
@@ -226,10 +241,11 @@
             "3000 mAh Battery",
             "Qualcomm Snapdragon 435 1.4 GHz Octacore Processor"
           ],
-          "url": "/images/mobile/mb-3.webp"
+          "url": "/images/television/tv-7.webp"
         },
         {
-          "key": 3,
+          "key": 7,
+          "productCode": 2327,
           "category": "lg",
           "name": "LG W41",
           "price": 16000,
@@ -240,7 +256,7 @@
             "5000 mAh Battery",
             "MediaTek Helio G35 Processor"
           ],
-          "url": "/images/mobile/mb-8.webp"
+          "url": "/images/television/tv-8.webp"
         }
       ]
     }
