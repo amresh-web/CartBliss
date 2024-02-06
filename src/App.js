@@ -18,6 +18,8 @@ const Laptop = React.lazy(() => import("./pages/Laptop/Laptop"));
 const Camera = React.lazy(() => import("./pages/Camera/Camera"));
 const ProductList = React.lazy(() => import("./components/Common/ProductList"));
 const ProductDetail = React.lazy(() => import("./components/Common/Details"));
+const Signup = React.lazy(() => import("./pages/Signup/Signup"));
+const Login = React.lazy(() => import("./pages/Login/Login"));
 
 function App() {
   const router = createBrowserRouter([
@@ -38,6 +40,8 @@ function App() {
         { path: "product/:name/:productCode", element: <ProductDetail /> },
       ],
     },
+    {path: "signup", element: <Signup />},
+    {path: "login", element: <Login />}
   ]);
 
   return <RouterProvider router={router} />;
