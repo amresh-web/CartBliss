@@ -1,0 +1,264 @@
+{
+  "mobile": [
+    {
+      "samsumg": [
+        {
+          "key": 0,
+          "productCode": 2312,
+          "category": "samsung",
+          "name": "Samsung Galaxy S21",
+          "price": 39999,
+          "desc": [
+            "8 GB RAM | 128 GB ROM",
+            "16.26 cm (6.4 inch) Full HD+ Display",
+            "12MP + 12MP + 8MP (OIS) | 32MP Front Camera",
+            "4500 mAh Lithium-ion Battery",
+            "Snapdragon 888 Processor"
+          ],
+          "url": "/images/mobile/mb-1.webp"
+        },
+        {
+          "key": 1,
+          "productCode": 2313,
+          "category": "samsung",
+          "name": "SAMSUNG Galaxy F54 5G",
+          "price": "24999",
+          "desc": [
+            "8 GB RAM | 256 GB ROM | Expandable Upto 1 TB",
+            "17.02 cm (6.7 inch) Full HD+ Display",
+            "108MP + 8MP + 2MP | 32MP Front Camera",
+            "6000 mAh Battery",
+            "Octa Core Processor"
+          ],
+          "url": "/images/mobile/mb-2.webp"
+        },
+        {
+          "key": 2,
+          "productCode": 2314,
+          "category": "samsung",
+          "name": "SAMSUNG Galaxy F34 5G ",
+          "price": 18499,
+          "desc": [
+            "6 GB RAM | 128 GB ROM | Expandable Upto 1 TB",
+            "16.51 cm (6.5 inch) Full HD+ Display",
+            "50MP (OIS) + 8MP + 2MP | 13MP Front Camera",
+            "6000 mAh Battery",
+            "Exynos 1280 Processor"
+          ],
+          "url": "/images/mobile/mb-3.webp"
+        },
+        {
+          "key": 3,
+          "productCode": 2315,
+          "category": "samsung",
+          "name": "SAMSUNG Galaxy A34 5G",
+          "price": 27499,
+          "desc": [
+            "8 GB RAM | 128 GB ROM | Expandable Upto 1 TB",
+            "16.76 cm (6.6 inch) Full HD+ Display",
+            "48MP + 8MP + 5MP | 13MP Front Camera",
+            "5000 mAh Li-ion Battery Battery",
+            "Dimensity 1080, Octa Core Processor"
+          ],
+          "url": "/images/mobile/mb-4.webp"
+        }
+      ]
+    },
+    {
+      "lg": [
+        {
+          "key": 4,
+          "productCode": 2316,
+          "category": "lg",
+          "name": "LG K42",
+          "price": 11649,
+          "desc": [
+            "3 GB RAM | 64 GB ROM | Expandable Upto 2 TB",
+            "16.76 cm (6.6 inch) HD+ Display",
+            "13MP + 5MP + 2MP + 2MP | 8MP Front Camera",
+            "4000 mAh Lithium Polymer Battery",
+            "MediaTek Helio P22 (MT6762) Processor",
+            "Military Standard 810G Certified for Durability"
+          ],
+          "url": "/images/mobile/mb-5.webp"
+        },
+        {
+          "key": 5,
+          "productCode": 2317,
+          "category": "lg",
+          "name": "LG Optimus L70",
+          "price": "12791",
+          "desc": [
+            "1 GB RAM | 4 GB ROM | Expandable Upto 32 GB",
+            "11.43 cm (4.5 inch) WVGA Display",
+            "5MP Rear Camera | 0.3MP Front Camera",
+            "2100 mAh Li-Ion Battery",
+            "Snapdragon Processor"
+          ],
+          "url": "/images/mobile/mb-6.webp"
+        },
+        {
+          "key": 6,
+          "productCode": 2318,
+          "category": "lg",
+          "name": "LG Q6+ ",
+          "price": 19990,
+          "desc": [
+            "4 GB RAM | 64 GB ROM | Expandable Upto 2 TB",
+            "13.97 cm (5.5 inch) Full HD+ Display",
+            "13MP Rear Camera | 5MP Front Camera",
+            "3000 mAh Battery",
+            "Qualcomm Snapdragon 435 1.4 GHz Octacore Processor"
+          ],
+          "url": "/images/mobile/mb-7.webp"
+        },
+        {
+          "key": 7,
+          "productCode": 2319,
+          "category": "lg",
+          "name": "LG W41",
+          "price": 16000,
+          "desc": [
+            "4 GB RAM | 64 GB ROM | Expandable Upto 256 GB",
+            "16.64 cm (6.55 inch) HD+ Display",
+            "48MP + 8MP + 5MP + 2MP | 8MP Front Camera",
+            "5000 mAh Battery",
+            "MediaTek Helio G35 Processor"
+          ],
+          "url": "/images/mobile/mb-8.webp"
+        }
+      ]
+    }
+  ],
+  "television": [
+    {
+      "samsumg": [
+        {
+          "key": 0,
+          "productCode": 2320,
+          "category": "samsung",
+          "name": "Samsung Galaxy S21",
+          "price": 39999,
+          "desc": [
+            "8 GB RAM | 128 GB ROM",
+            "16.26 cm (6.4 inch) Full HD+ Display",
+            "12MP + 12MP + 8MP (OIS) | 32MP Front Camera",
+            "4500 mAh Lithium-ion Battery",
+            "Snapdragon 888 Processor"
+          ],
+          "url": "/images/television/tv-1.webp"
+        },
+        {
+          "key": 1,
+          "productCode": 2321,
+          "category": "samsung",
+          "name": "SAMSUNG Galaxy F54 5G",
+          "price": "24999",
+          "desc": [
+            "8 GB RAM | 256 GB ROM | Expandable Upto 1 TB",
+            "17.02 cm (6.7 inch) Full HD+ Display",
+            "108MP + 8MP + 2MP | 32MP Front Camera",
+            "6000 mAh Battery",
+            "Octa Core Processor"
+          ],
+          "url": "/images/television/tv-2.webp"
+        },
+        {
+          "key": 2,
+          "productCode": 2322,
+          "category": "samsung",
+          "name": "SAMSUNG Galaxy F34 5G ",
+          "price": 18499,
+          "desc": [
+            "6 GB RAM | 128 GB ROM | Expandable Upto 1 TB",
+            "16.51 cm (6.5 inch) Full HD+ Display",
+            "50MP (OIS) + 8MP + 2MP | 13MP Front Camera",
+            "6000 mAh Battery",
+            "Exynos 1280 Processor"
+          ],
+          "url": "/images/television/tv-3.webp"
+        },
+        {
+          "key": 3,
+          "productCode": 2323,
+          "category": "samsung",
+          "name": "SAMSUNG Galaxy A34 5G",
+          "price": 27499,
+          "desc": [
+            "8 GB RAM | 128 GB ROM | Expandable Upto 1 TB",
+            "16.76 cm (6.6 inch) Full HD+ Display",
+            "48MP + 8MP + 5MP | 13MP Front Camera",
+            "5000 mAh Li-ion Battery Battery",
+            "Dimensity 1080, Octa Core Processor"
+          ],
+          "url": "/images/television/tv-4.webp"
+        }
+      ]
+    },
+    {
+      "lg": [
+        {
+          "key": 4,
+          "productCode": 2324,
+          "category": "lg",
+          "name": "LG K42",
+          "price": 11649,
+          "desc": [
+            "3 GB RAM | 64 GB ROM | Expandable Upto 2 TB",
+            "16.76 cm (6.6 inch) HD+ Display",
+            "13MP + 5MP + 2MP + 2MP | 8MP Front Camera",
+            "4000 mAh Lithium Polymer Battery",
+            "MediaTek Helio P22 (MT6762) Processor",
+            "Military Standard 810G Certified for Durability"
+          ],
+          "url": "/images/television/tv-5.webp"
+        },
+        {
+          "key": 5,
+          "productCode": 2325,
+          "category": "lg",
+          "name": "LG Optimus L70",
+          "price": "12791",
+          "desc": [
+            "1 GB RAM | 4 GB ROM | Expandable Upto 32 GB",
+            "11.43 cm (4.5 inch) WVGA Display",
+            "5MP Rear Camera | 0.3MP Front Camera",
+            "2100 mAh Li-Ion Battery",
+            "Snapdragon Processor"
+          ],
+          "url": "/images/television/tv-6.webp"
+        },
+        {
+          "key": 6,
+          "productCode": 2326,
+          "category": "lg",
+          "name": "LG Q6+ ",
+          "price": 19990,
+          "desc": [
+            "4 GB RAM | 64 GB ROM | Expandable Upto 2 TB",
+            "13.97 cm (5.5 inch) Full HD+ Display",
+            "13MP Rear Camera | 5MP Front Camera",
+            "3000 mAh Battery",
+            "Qualcomm Snapdragon 435 1.4 GHz Octacore Processor"
+          ],
+          "url": "/images/television/tv-7.webp"
+        },
+        {
+          "key": 7,
+          "productCode": 2327,
+          "category": "lg",
+          "name": "LG W41",
+          "price": 16000,
+          "desc": [
+            "4 GB RAM | 64 GB ROM | Expandable Upto 256 GB",
+            "16.64 cm (6.55 inch) HD+ Display",
+            "48MP + 8MP + 5MP + 2MP | 8MP Front Camera",
+            "5000 mAh Battery",
+            "MediaTek Helio G35 Processor"
+          ],
+          "url": "/images/television/tv-8.webp"
+        }
+      ]
+    }
+  ]
+}
