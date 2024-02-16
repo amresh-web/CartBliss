@@ -1,17 +1,12 @@
 @import './utilitie/mixins';
 
 .logo {
-    @include font-size(42px);
-    width: 100%;
-    height: 100%;
+    @include font-size(54px);
     color: var(--white);
     font-family: var(--dm-font);
-    display: flex;
-    align-items: center;
-  
     span {
       color: var(--secondry-color);
     }
   }
-.account{background-color:#0f52ab;min-height: 200px;height:50%;position: absolute;top: 50%;left: 0;transform: translateY(-50%);z-index: -99;}
+.account{background-color:#0f52ab;height:100%;}
 .wrapper{background-color: #1560bd;width: 100%;float: left;opacity: 0.8;}

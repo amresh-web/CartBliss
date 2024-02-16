@@ -1,13 +1,11 @@
 import { useEffect } from "react";
 
-const Signup = (props) => {
-useEffect(() => {
-    props.getDataVal("sign Up");
-})
-console.log(props)
+const Signup = () => {
+
     return (<>
         <div className={"row"}>
-            <div className={"col-12 col-md-9 col-lg-6 mx-auto"}>
+         
+            <div className={"col-12"}>
                 <div className={"bg-white rounded-3 p-5"}>
                     <form className="row g-3">
                         <div className="col-md-6">
