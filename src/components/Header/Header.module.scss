@@ -31,7 +31,9 @@ header {
   h5 {
     @include font-size(16px);
     @include font-attribute(var(--secondry-color), 500);
-
+    a{
+      color: var(--secondry-color);
+    }
   }
 }
 

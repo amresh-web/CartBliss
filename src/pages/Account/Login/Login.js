@@ -1,14 +1,14 @@
 const Login = () => {
     return (<>
-        <div className={"row"}>
-            <div className={"col-12 col-md-9 col-lg-6 mx-auto"}>
-                <div className={"bg-white rounded-3 p-5"}>
+        <div className={"row h-100"}>
+            <div className={"col-12"}>
+                <div className={"bg-white h-100 rounded-start p-5"}>
                     <form className="row g-3">
-                        <div className="col-md-6">
+                        <div className="col-md-12">
                             <label htmlFor="email" className="form-label">Email</label>
                             <input type="email" className="form-control" id="email" />
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-12">
                             <label htmlFor="pass" className="form-label">Password</label>
                             <input type="password" className="form-control" id="pass" />
                         </div>
