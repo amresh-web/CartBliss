@@ -11,15 +11,14 @@ export default function Account() {
     useEffect(()=>{
    
     if(window.location.pathname === '/signup'){
-        setDesc("You have an Account click here to")
-        setLgn(<NavLink className={"fs-4 text-white fw-bold text-decoration-none"} to="/login">Login</NavLink>)
+        //setDesc("You have an Account click here to")
+        //setLgn(<NavLink className={"fs-4 text-white fw-bold text-decoration-none"} to="/login">Login</NavLink>)
     }
     if(window.location.pathname === '/login'){
-        setDesc("If you don't have an Account click here to")
-        setLgn(<NavLink className={"fs-4 text-white fw-bold text-decoration-none"} to="/signup">Sign Up</NavLink>)
+        //setDesc("If you don't have an Account click here to")
+        //setLgn(<NavLink className={"fs-4 text-white fw-bold text-decoration-none"} to="/signup">Sign Up</NavLink>)
     }
 },[title,desc,lgn])
-    console.log(window.location.pathname); 
     return (<>
         <Suspense fallback={<div>Loading...</div>}>
             <div className={[style.wrapper, "d-flex justify-content-center align-items-center vh-100"].join(' ')}>
