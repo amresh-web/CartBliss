@@ -67,7 +67,7 @@ const Signup = () => {
     if (Object.keys(validiateError).length === 0) {
       try {
         const response = await axios.post(
-          "http://localhost:4000/api/user/adduser",
+          `${process.env.REACT_APP_BASE_URL}/user/adduser`,
           formData
         );
         console.log(response.data);
