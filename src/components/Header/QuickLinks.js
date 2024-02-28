@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import style from './Header.module.scss';
 
 const QuickLinks = () => {
@@ -13,7 +14,9 @@ const QuickLinks = () => {
       </div>
       <div className={"text-center ps-3"}>
         <i className="bi bi-person"></i>
-        <h5 className={'mb-0'}>Sign In</h5>
+        <h5 className={'mb-0'}>
+        <NavLink className={"text-decoration-none"} to="/login">Sign In</NavLink>
+        </h5>
       </div>
     </div>
   </>

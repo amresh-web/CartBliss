@@ -4,6 +4,7 @@ import "../src/assets/scss/custom.scss";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RouteLayout from "./Route";
 import Error from "./Error";
+import AccountLayout from "./pages/Account/Account";
 
 const Home = React.lazy(() => import("./pages/Home/Home"));
 const Details = React.lazy(() => import("./components/Common/Details"));
@@ -18,8 +19,8 @@ const Laptop = React.lazy(() => import("./pages/Laptop/Laptop"));
 const Camera = React.lazy(() => import("./pages/Camera/Camera"));
 const ProductList = React.lazy(() => import("./components/Common/ProductList"));
 const ProductDetail = React.lazy(() => import("./components/Common/Details"));
-const Signup = React.lazy(() => import("./pages/Signup/Signup"));
-const Login = React.lazy(() => import("./pages/Login/Login"));
+const Signup = React.lazy(() => import("./pages/Account/Signup/Signup"));
+const Login = React.lazy(() => import("./pages/Account/Login/Login"));
 
 function App() {
   const router = createBrowserRouter([
@@ -40,8 +41,10 @@ function App() {
         { path: "product/:name/:productCode", element: <ProductDetail /> },
       ],
     },
-    {path: "signup", element: <Signup />},
-    {path: "login", element: <Login />}
+    {element: <AccountLayout />, children: [
+      {path: "login", element: <Login />},
+      {path: "signup", element: <Signup />},
+    ]}
   ]);
 
   return <RouterProvider router={router} />;
