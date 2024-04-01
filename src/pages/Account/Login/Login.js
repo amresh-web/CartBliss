@@ -1,18 +1,41 @@
 import axios from "axios";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { authAction } from "../../../store/store";
 
 const Login = () => {
+  const dispatch = useDispatch();
+  const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
-  const [errors, setErrors] = useState({});
-  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
-    let { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const loginSender = async () => {
+    try {
+      const res = await axios.post(
+        `${process.env.REACT_APP_BASE_URL}/user/signin`,
+        {
+          email: formData.email,
+          password: formData.password,
+        }
+      );
+      if (res.status === 200) {
+        dispatch(authAction.login());
+        navigate("/");
+      } else {
+        console.log("Login failed. Status code:", res.status);
+      }
+    } catch (err) {
+      console.error("An error occurred during login:", err.message);
+      setErrors("An error occurred during login. Please try again later.");
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -26,16 +49,7 @@ const Login = () => {
     }
     setErrors(validiateError);
     if (Object.keys(validiateError).length === 0) {
-      try {
-        const response = await axios.post(
-          `${process.env.REACT_APP_BASE_URL}/user/signin`,
-          formData
-        );
-        navigate("/");
-        console.log(response.data);
-      } catch (e) {
-        console.error(errors);
-      }
+      loginSender();
     }
   };
   return (
@@ -53,6 +67,7 @@ const Login = () => {
                   className="form-control"
                   id="email"
                   name="email"
+                  value={formData.email}
                   onChange={handleInputChange}
                 />
                 {errors.email && (
@@ -70,6 +85,7 @@ const Login = () => {
                   className="form-control"
                   id="pass"
                   name="password"
+                  value={formData.password}
                   onChange={handleInputChange}
                 />
                 {errors.password && (
