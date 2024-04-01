@@ -5,10 +5,7 @@ const Navigation = () => {
   return (
     <>
       <nav className={[style["navbar-nav"], "nav"].join(" ")}>
-      <NavLink
-          to={"/"}
-          className={[style["nav-link"], "nav-link"].join(" ")}
-        >
+        <NavLink to={"/"} className={[style["nav-link"], "nav-link"].join(" ")}>
           Home
         </NavLink>
         <NavLink
