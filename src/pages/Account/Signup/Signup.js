@@ -19,7 +19,7 @@ const Signup = () => {
   const handleInputChange = (e) => {
     let { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    console.log(formData.fullname);
+   
   };
 
   const handleSubmit = async (e) => {

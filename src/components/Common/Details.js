@@ -1,5 +1,3 @@
-import styles from "../../assets/scss/Details.module.scss";
-
 const Details = () => {
   const history = window.history.state
   const data = history.usr.item

@@ -5,6 +5,7 @@ import QuickLinks from "./QuickLinks";
 import Navigation from "./Navigation";
 
 const Home = () => {
+
   return (
     <>
       <header>

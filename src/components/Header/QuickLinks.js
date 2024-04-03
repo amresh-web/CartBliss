@@ -3,28 +3,24 @@ import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 import style from "./Header.module.scss";
 import { authAction } from "../../store/store";
+axios.defaults.withCredentials = true;
 
 const QuickLinks = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
 
-  const logout = async () => {
-    const res = await axios.post(
-      `${process.env.REACT_APP_BASE_URL}/user/logout`,
-      null,
-      { withCredentials: true }
-    );
-    if (res.status === 200) {
-      return res;
-    } else {
-      return new Error("Unable to Logout.");
-    }
-  };
-
-  const handleLogout = () => {
-    logout().then(() => dispatch(authAction.logout));
-    navigate("/");
+  const handleLogout = async () => {
+    try{
+      const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/user/logout`,null, {withCredentials: true});
+      if(res.status === 200){
+        dispatch(authAction.logout());
+        navigate('/');
+        return res
+      }
+      } catch(err){
+        console.log(err.message);
+      }
   };
   return (
     <>

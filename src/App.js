@@ -22,6 +22,7 @@ const ProductDetail = React.lazy(() => import("./components/Common/Details"));
 const Signup = React.lazy(() => import("./pages/Account/Signup/Signup"));
 const Login = React.lazy(() => import("./pages/Account/Login/Login"));
 const Profile = React.lazy(() => import("./pages/Profile/Profile"));
+const AddProduct = React.lazy(() => import("./components/seller/AddProduct"));
 
 function App() {
   const router = createBrowserRouter([
@@ -41,6 +42,7 @@ function App() {
         { path: "product/:name", element: <ProductList /> },
         { path: "product/:name/:productCode", element: <ProductDetail /> },
         { path: "profile", element: <Profile /> },
+        { path: "addproduct", element: <AddProduct /> }
       ],
     },
     {

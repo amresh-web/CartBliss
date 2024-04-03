@@ -1,12 +1,12 @@
-import { NavLink, Outlet } from "react-router-dom";
-import { Suspense, useEffect, useState } from "react";
+import { Outlet } from "react-router-dom";
+import { Suspense, useEffect } from "react";
 import style from "../../assets/scss/Account.module.scss";
 
 
 export default function Account() {
-    const [title, setTitile] = useState()
-    const [desc, setDesc] = useState()
-    const [lgn, setLgn] = useState()
+    //const [title, setTitile] = useState()
+    // const [desc, setDesc] = useState()
+    // const [lgn, setLgn] = useState()
 
     useEffect(()=>{
    
@@ -18,7 +18,7 @@ export default function Account() {
         //setDesc("If you don't have an Account click here to")
         //setLgn(<NavLink className={"fs-4 text-white fw-bold text-decoration-none"} to="/signup">Sign Up</NavLink>)
     }
-},[title,desc,lgn])
+},[])
     return (<>
         <Suspense fallback={<div>Loading...</div>}>
             <div className={[style.wrapper, "d-flex justify-content-center align-items-center vh-100"].join(' ')}>
@@ -35,7 +35,7 @@ export default function Account() {
                                     Cart <span>Bliss</span>
                                 </div>
                                 <div className={"w-100 text-center"}>
-                                    <p className="fs-6 fw-normal text-white">{desc} {lgn}</p>
+                                    {/* <p className="fs-6 fw-normal text-white">{desc} {lgn}</p> */}
                                 </div>
                             </div>
                         </div>

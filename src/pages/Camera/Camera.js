@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import Category from "../../components/Common/Category";
 
 const cameraBanner = [
