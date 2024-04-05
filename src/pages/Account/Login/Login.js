@@ -49,7 +49,7 @@ const Login = () => {
     }
     setErrors(validiateError);
     if (Object.keys(validiateError).length === 0) {
-      loginSender();
+     loginSender();
     }
   };
   return (
@@ -105,6 +105,13 @@ const Login = () => {
                     Check me out
                   </label>
                 </div>
+              </div>
+              <div className="col-12">
+              {/* {errors && (
+                  <p className={"fs-6 fw-normal text-danger m-0"}>
+                    {errors}
+                  </p>
+                )} */}
               </div>
               <div className="col-12">
                 <button type="submit" className="btn btn-primary">
