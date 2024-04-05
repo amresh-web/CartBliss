@@ -3,25 +3,36 @@ import axios from "axios";
 
 const AddProduct = () => {
 
-    const [formData, setFormData] = useState({
+    const [addProduct, setAddProduct] = useState({
         productName:"",
         modalno: "",
         price: "",
         color: "",
         description:"",
-        image:""
+        images:[]
     });
 
     const handleInputChange = (e) => {
-        setFormData((prev) => ({...prev, [e.target.name]: e.target.value}))
+        const { name, value } = e.target;
+        setAddProduct({ ...addProduct, [name]: value });
     }
     const handleUploadFile = (e) => {
-        setFormData((prev) => ({...prev, [e.target.name]: e.target.files}))
+        const files = Array.from(e.target.files);
+        setAddProduct({ ...addProduct, images: files });
+        console.log(typeof(files))
     }
     const handleSubmit = async (e) => {
         e.preventDefault();
+       const formData = new FormData();
+       formData.append('productName', addProduct.productName);
+       formData.append('modalno', addProduct.modalno);
+       formData.append('price', addProduct.price);
+       formData.append('color', addProduct.color);
+       formData.append('description', addProduct.description);
+       addProduct.images.forEach((image) => {
+        formData.append('images', image);
+        });
         console.log(formData)
-
         try {
             const response = await axios.post(
               `${process.env.REACT_APP_BASE_URL}/product/addproduct`,
@@ -77,7 +88,7 @@ const AddProduct = () => {
                         <div className="row mb-3">
                             <label htmlFor="uploadimg" className="col-sm-3 col-form-label">Upload Images</label>
                             <div className="col-sm-9">
-                                <input type="file" className="form-control" id="uploadimg" name="image" multiple onChange={handleUploadFile} />
+                                <input type="file" className="form-control" id="uploadimg" name="images" multiple onChange={handleUploadFile} />
                             </div>
                         </div>
                         <div className="text-end">
