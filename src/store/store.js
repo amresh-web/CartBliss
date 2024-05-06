@@ -11,7 +11,7 @@ const auth = createSlice({
       state.isLoggedIn = false;
     },
   },
+  
 });
-
 export const authAction = auth.actions;
 export const store = configureStore({ reducer: auth.reducer });
