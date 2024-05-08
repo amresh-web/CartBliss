@@ -28,7 +28,7 @@ const Login = () => {
       );
       if (res.status === 200) {
         dispatch(authAction.login());
-        navigate("/");
+        navigate("/addproduct");
       } else {
         console.log("Login failed. Status code:", res.status);
       }

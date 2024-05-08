@@ -11,6 +11,7 @@ const QuickLinks = () => {
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
 
   const handleLogout = async () => {
+    
     try{
       const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/user/logout`,null, {withCredentials: true});
       if(res.status === 200){
