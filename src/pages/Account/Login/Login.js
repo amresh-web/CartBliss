@@ -4,7 +4,8 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { authAction } from "../../../store/store";
 
-const Login = () => {
+
+const Login = ({setUser}) => {
   const dispatch = useDispatch();
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
@@ -13,10 +14,13 @@ const Login = () => {
     password: "",
   });
 
+
+
   const handleInputChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  let userId;
   const loginSender = async () => {
     try {
       const res = await axios.post(
@@ -27,8 +31,11 @@ const Login = () => {
         }
       );
       if (res.status === 200) {
+        userId = res.data.data._id;
+        setUser(userId)
+     
         dispatch(authAction.login());
-        navigate("/");
+        navigate("/addproduct");
       } else {
         console.log("Login failed. Status code:", res.status);
       }
@@ -52,6 +59,8 @@ const Login = () => {
      loginSender();
     }
   };
+
+
   return (
     <>
       <div className={"row h-100"}>
