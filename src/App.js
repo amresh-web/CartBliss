@@ -24,6 +24,8 @@ const Signup = React.lazy(() => import("./pages/Account/Signup/Signup"));
 const Login = React.lazy(() => import("./pages/Account/Login/Login"));
 const Profile = React.lazy(() => import("./pages/Profile/Profile"));
 const AddProduct = React.lazy(() => import("./components/seller/AddProduct"));
+const SellerCategory = React.lazy(() => import("./seller/Category/Category"));
+const Sellerbrand = React.lazy(() => import("./seller/Brand/Brand"));
 
 function App() {
   const [user, setUser] = useState();
@@ -45,7 +47,12 @@ function App() {
         { path: "product/:name", element: <ProductList /> },
         { path: "product/:name/:productCode", element: <ProductDetail /> },
         { path: "profile", element: <Profile /> },
-        { path: "addproduct", element: <Protected Component={AddProduct} user={user} /> }
+        {
+          path: "addproduct",
+          element: <Protected Component={AddProduct} user={user} />,
+        },
+        { path: "category", element: <SellerCategory /> },
+        { path: "brand", element: <Sellerbrand /> },
       ],
     },
     {
