@@ -1,5 +1,7 @@
 import Category from "../../components/Common/Category";
-import datas from "../../assets/data.json";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { CatMapper } from "../../utils/CatMapper";
 
 const smartPhoneBanner = [
   {
@@ -14,9 +16,29 @@ const smartPhoneBanner = [
 const title = "Smart Phones";
 
 const SmartPhones = () => {
+  const categoryId = CatMapper();
+  const [catData, SetCatData] = useState([]);
+
+  const fetchCategoryData = async () => {
+    try {
+      const res = await axios.get(
+        `${process.env.REACT_APP_BASE_URL}/category/getcategory/${categoryId}/getallmodel`
+      );
+      if (res.status === 200) {
+        SetCatData(res.data);
+      }
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
+  //console.log('samrt phone',catData)
+  useEffect(() => {
+    fetchCategoryData();
+  }, []);
+
   return (
     <>
-      <Category title={title} banner={smartPhoneBanner} data={datas.mobile} />
+      <Category title={title} banner={smartPhoneBanner} data={catData} />
     </>
   );
 };

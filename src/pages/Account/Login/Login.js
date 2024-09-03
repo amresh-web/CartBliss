@@ -2,10 +2,9 @@ import axios from "axios";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { authAction } from "../../../store/store";
+import { login } from "../../../store/authSlice";
 
-
-const Login = ({setUser}) => {
+const Login = ({ setUser }) => {
   const dispatch = useDispatch();
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
@@ -14,27 +13,24 @@ const Login = ({setUser}) => {
     password: "",
   });
 
-
-
   const handleInputChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  let userId;
   const loginSender = async () => {
     try {
       const res = await axios.post(
         `${process.env.REACT_APP_BASE_URL}/user/signin`,
-        {
-          email: formData.email,
-          password: formData.password,
-        }
+        { email: formData.email, password: formData.password }
       );
       if (res.status === 200) {
-        userId = res.data.data._id;
-        setUser(userId)
-     
-        dispatch(authAction.login());
+        setUser(res.data.data._id);
+        const userData = {
+          email: res.data.data.email,
+          password: res.data.data.password,
+          token: res.data.token,
+        };
+        dispatch(login(userData));
         navigate("/addproduct");
       } else {
         console.log("Login failed. Status code:", res.status);
@@ -56,10 +52,9 @@ const Login = ({setUser}) => {
     }
     setErrors(validiateError);
     if (Object.keys(validiateError).length === 0) {
-     loginSender();
+      loginSender();
     }
   };
-
 
   return (
     <>
@@ -116,7 +111,7 @@ const Login = ({setUser}) => {
                 </div>
               </div>
               <div className="col-12">
-              {/* {errors && (
+                {/* {errors && (
                   <p className={"fs-6 fw-normal text-danger m-0"}>
                     {errors}
                   </p>

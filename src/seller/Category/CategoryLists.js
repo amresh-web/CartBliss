@@ -1,8 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 const CategoryLists = ({ fetch }) => {
   const [categories, setCategories] = useState([]);
+  const state = useSelector((state) => state?.category);
 
   const getData = async () => {
     try {
