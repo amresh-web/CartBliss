@@ -1,6 +1,5 @@
 import React from "react";
 import Category from "../../components/Common/Category";
-import datas from "../../assets/data.json";
 
 const televisonBanner = [
   {
@@ -10,15 +9,16 @@ const televisonBanner = [
   {
     key: 1,
     url: "banner/smartphone4.jpg",
-  }
+  },
 ];
 
 const title = "Television";
+const television = [];
 
 const Television = () => {
   return (
     <>
-       <Category title={title} banner={televisonBanner} data={datas.television} />
+      <Category title={title} banner={televisonBanner} data={television} />
     </>
   );
 };

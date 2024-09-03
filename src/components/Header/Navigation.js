@@ -9,19 +9,19 @@ const Navigation = () => {
           Home
         </NavLink>
         <NavLink
-          to={"smartphones"}
+          to={"smartphone"}
           className={[style["nav-link"], "nav-link"].join(" ")}
         >
           Smart Phone
         </NavLink>
         <NavLink
-          to={"televisions"}
+          to={"television"}
           className={[style["nav-link"], "nav-link"].join(" ")}
         >
           Television
         </NavLink>
         <NavLink
-          to={"home-appliances"}
+          to={"homeappliances"}
           className={[style["nav-link"], "nav-link"].join(" ")}
         >
           Home Appliances
@@ -45,7 +45,7 @@ const Navigation = () => {
           Kitchen Appliances
         </NavLink>
         <NavLink
-          to={"cameras"}
+          to={"camera"}
           className={[style["nav-link"], "nav-link"].join(" ")}
         >
           Camera

@@ -2,25 +2,30 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 import style from "./Header.module.scss";
-import { authAction } from "../../store/store";
+import { logout } from "../../store/authSlice";
 axios.defaults.withCredentials = true;
 
 const QuickLinks = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const isLoggedIn = useSelector((state) => state.isLoggedIn);
+  const isLoggedIn = useSelector((state) => state.auth.status);
+  console.log(isLoggedIn);
 
   const handleLogout = async () => {
-    try{
-      const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/user/logout`,null, {withCredentials: true});
-      if(res.status === 200){
-        dispatch(authAction.logout());
-        navigate('/');
-        return res
+    try {
+      const res = await axios.post(
+        `${process.env.REACT_APP_BASE_URL}/user/logout`,
+        null,
+        { withCredentials: true }
+      );
+      if (res.status === 200) {
+        dispatch(logout());
+        navigate("/");
+        return res;
       }
-      } catch(err){
-        console.log(err.message);
-      }
+    } catch (err) {
+      console.log(err.message);
+    }
   };
   return (
     <>

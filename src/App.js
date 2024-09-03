@@ -1,11 +1,13 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../src/assets/scss/custom.scss";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RouteLayout from "./Route";
 import Error from "./Error";
 import AccountLayout from "./pages/Account/Account";
 import Protected from "./pages/Account/Protect";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCategoryData } from "./store/categorySlice";
 
 const Home = React.lazy(() => import("./pages/Home/Home"));
 const Details = React.lazy(() => import("./components/Common/Details"));
@@ -23,11 +25,18 @@ const ProductDetail = React.lazy(() => import("./components/Common/Details"));
 const Signup = React.lazy(() => import("./pages/Account/Signup/Signup"));
 const Login = React.lazy(() => import("./pages/Account/Login/Login"));
 const Profile = React.lazy(() => import("./pages/Profile/Profile"));
-const AddProduct = React.lazy(() => import("./components/seller/AddProduct"));
+const AddProduct = React.lazy(() => import("./seller/AddProduct"));
 const SellerCategory = React.lazy(() => import("./seller/Category/Category"));
 const Sellerbrand = React.lazy(() => import("./seller/Brand/Brand"));
+const SellerModel = React.lazy(() => import("./seller/ProductModel/Model"));
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCategoryData());
+  }, [dispatch]);
+
   const [user, setUser] = useState();
 
   const router = createBrowserRouter([
@@ -36,14 +45,14 @@ function App() {
       errorElement: <Error />,
       children: [
         { index: true, element: <Home /> },
-        { path: "smartphones", element: <SmartPhone /> },
-        { path: "televisions", element: <Television /> },
+        { path: "smartphone", element: <SmartPhone /> },
+        { path: "television", element: <Television /> },
         { path: "details", element: <Details /> },
         { path: "kitchen", element: <Kitchen /> },
-        { path: "home-appliances", element: <HomeAppliances /> },
+        { path: "homeappliances", element: <HomeAppliances /> },
         { path: "smarthome", element: <SmartHome /> },
         { path: "laptops", element: <Laptop /> },
-        { path: "cameras", element: <Camera /> },
+        { path: "camera", element: <Camera /> },
         { path: "product/:name", element: <ProductList /> },
         { path: "product/:name/:productCode", element: <ProductDetail /> },
         { path: "profile", element: <Profile /> },
@@ -53,6 +62,7 @@ function App() {
         },
         { path: "category", element: <SellerCategory /> },
         { path: "brand", element: <Sellerbrand /> },
+        { path: "model", element: <SellerModel /> },
       ],
     },
     {
