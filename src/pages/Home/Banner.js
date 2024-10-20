@@ -9,13 +9,13 @@ const Banner = () => {
     <>
       <article>
         <Carousel>
-          <Carousel.Item>
+          <Carousel.Item key={"b1"}>
             <img src={image1} alt="" />
           </Carousel.Item>
-          <Carousel.Item>
+          <Carousel.Item key={"b2"}>
             <img src={image2} alt="" />
           </Carousel.Item>
-          <Carousel.Item>
+          <Carousel.Item key={"b3"}>
             <img src={image3} alt="" />
           </Carousel.Item>
         </Carousel>

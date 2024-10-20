@@ -2,14 +2,18 @@ import styles from "./Home.module.scss";
 
 const services = [
   {
-    id: 1,
+    id: "ss1",
     logo: "images/services/free-shipping.png",
     title: "Free Shipping 499 Over",
   },
-  { id: 2, logo: "images/services/flash.png", title: "Weekly Flash Sale" },
-  { id: 3, logo: "images/services/days.png", title: "Special Days Discounts" },
+  { id: "ss2", logo: "images/services/flash.png", title: "Weekly Flash Sale" },
   {
-    id: 4,
+    id: "ss3",
+    logo: "images/services/days.png",
+    title: "Special Days Discounts",
+  },
+  {
+    id: "ss4",
     logo: "images/services/affordable.png",
     title: "Affordable Shopping",
   },
