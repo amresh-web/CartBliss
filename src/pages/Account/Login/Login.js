@@ -2,7 +2,8 @@ import axios from "axios";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { login } from "../../../store/authSlice";
+import { login } from "../../../redux/auth/authSlice";
+import axiosInstance from "../../../axios-interceptor";
 
 const Login = ({ setUser }) => {
   const dispatch = useDispatch();
@@ -16,21 +17,15 @@ const Login = ({ setUser }) => {
   const handleInputChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
-
   const loginSender = async () => {
     try {
-      const res = await axios.post(
-        `${process.env.REACT_APP_BASE_URL}/user/signin`,
-        { email: formData.email, password: formData.password }
-      );
+      const res = await axiosInstance.post(`/user/signin`, {
+        email: formData.email,
+        password: formData.password,
+      });
       if (res.status === 200) {
-        setUser(res.data.data._id);
-        const userData = {
-          email: res.data.data.email,
-          password: res.data.data.password,
-          token: res.data.token,
-        };
-        dispatch(login(userData));
+        console.log("Navigating to /addproduct");
+        dispatch(login(res.data));
         navigate("/addproduct");
       } else {
         console.log("Login failed. Status code:", res.status);

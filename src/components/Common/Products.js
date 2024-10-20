@@ -4,6 +4,8 @@ import Button from "./Button";
 import images from "../../assets/images/mobile/mb-1.webp";
 
 const Products = ({ data }) => {
+  const imageUrl = `http://localhost:4000/images/${data[0]?.images[0]}`;
+  console.log(data[0]?.images[0]);
   return (
     <>
       {data && data.length > 0 ? (
@@ -20,7 +22,7 @@ const Products = ({ data }) => {
                       <img
                         key={index}
                         //src={`http://localhost:4000${image}`}
-                        src={images}
+                        src={imageUrl}
                         className={["mh-100 mw-100"].join(" ")}
                         alt={""}
                       />

@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 import style from "./Header.module.scss";
-import { logout } from "../../store/authSlice";
+import { logout } from "../../redux/auth/authSlice";
 axios.defaults.withCredentials = true;
 
 const QuickLinks = () => {
