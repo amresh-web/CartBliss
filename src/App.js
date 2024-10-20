@@ -1,13 +1,18 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState, useEffect } from "react";
 import "../src/assets/scss/custom.scss";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  useNavigate,
+} from "react-router-dom";
 import RouteLayout from "./Route";
 import Error from "./Error";
 import AccountLayout from "./pages/Account/Account";
-import Protected from "./pages/Account/Protect";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchCategoryData } from "./store/categorySlice";
+import { useDispatch } from "react-redux";
+import { fetchCategoryData } from "./redux/auth/categorySlice";
+import PrivateRoute from "./components/Common/PrivateRoute";
+import axiosInstance from "./axios-interceptor";
 
 const Home = React.lazy(() => import("./pages/Home/Home"));
 const Details = React.lazy(() => import("./components/Common/Details"));
@@ -32,12 +37,23 @@ const SellerModel = React.lazy(() => import("./seller/ProductModel/Model"));
 
 function App() {
   const dispatch = useDispatch();
-
   useEffect(() => {
+    const refreshTokenOnLoad = async () => {
+      const authStatus = sessionStorage.getItem("authStatus");
+      if (authStatus) {
+        try {
+          await axiosInstance.post("/user/refresh"); // Call refresh token API
+        } catch (error) {
+          sessionStorage.removeItem("authStatus");
+          console.error("Token refresh failed on load", error);
+          // Handle navigation to login if refresh fails
+        }
+      }
+    };
+
+    refreshTokenOnLoad();
     dispatch(fetchCategoryData());
   }, [dispatch]);
-
-  const [user, setUser] = useState();
 
   const router = createBrowserRouter([
     {
@@ -58,7 +74,11 @@ function App() {
         { path: "profile", element: <Profile /> },
         {
           path: "addproduct",
-          element: <Protected Component={AddProduct} user={user} />,
+          element: (
+            <PrivateRoute>
+              <AddProduct />
+            </PrivateRoute>
+          ),
         },
         { path: "category", element: <SellerCategory /> },
         { path: "brand", element: <Sellerbrand /> },
@@ -68,7 +88,7 @@ function App() {
     {
       element: <AccountLayout />,
       children: [
-        { path: "login", element: <Login setUser={setUser} /> },
+        { path: "login", element: <Login /> },
         { path: "signup", element: <Signup /> },
       ],
     },

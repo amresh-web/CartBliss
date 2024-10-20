@@ -1,7 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
 
 const Signup = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullname: "",
     username: "",
@@ -19,7 +23,6 @@ const Signup = () => {
   const handleInputChange = (e) => {
     let { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-   
   };
 
   const handleSubmit = async (e) => {
@@ -70,6 +73,12 @@ const Signup = () => {
           `${process.env.REACT_APP_BASE_URL}/user/adduser`,
           formData
         );
+        if (response.status === 200) {
+          toast.success(response.message);
+          setTimeout(() => {
+            navigate("/login");
+          }, 5000);
+        }
         console.log(response.data);
       } catch (error) {
         console.error(error);
@@ -79,6 +88,7 @@ const Signup = () => {
 
   return (
     <>
+      <ToastContainer />
       <div className={"row"}>
         <div className={"col-12"}>
           <div className={"bg-white rounded-start p-5"}>

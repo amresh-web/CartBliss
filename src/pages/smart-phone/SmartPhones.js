@@ -19,22 +19,21 @@ const SmartPhones = () => {
   const categoryId = CatMapper();
   const [catData, SetCatData] = useState([]);
 
-  const fetchCategoryData = async () => {
-    try {
-      const res = await axios.get(
-        `${process.env.REACT_APP_BASE_URL}/category/getcategory/${categoryId}/getallmodel`
-      );
-      if (res.status === 200) {
-        SetCatData(res.data);
-      }
-    } catch (err) {
-      console.log(err.message);
-    }
-  };
-  //console.log('samrt phone',catData)
   useEffect(() => {
+    const fetchCategoryData = async () => {
+      try {
+        const res = await axios.get(
+          `${process.env.REACT_APP_BASE_URL}/category/getcategory/${categoryId}/getallmodel`
+        );
+        if (res.status === 200) {
+          SetCatData(res.data);
+        }
+      } catch (err) {
+        console.log(err.message);
+      }
+    };
     fetchCategoryData();
-  }, []);
+  }, [categoryId]);
 
   return (
     <>

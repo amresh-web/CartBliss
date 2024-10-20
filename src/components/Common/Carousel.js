@@ -24,8 +24,10 @@ const CarouselSlider = (props) => {
               >
                 <img src={data.url} alt="movie" />
               </div>
-              <h5 className={"mt-4"}>{data.name}</h5>
-              <h6>{data.price}</h6>
+              <h5 key={index} className={"mt-4"}>
+                {data.name}
+              </h5>
+              <h6 key={`price${index}`}>{data.price}</h6>
             </>
           );
         })}
