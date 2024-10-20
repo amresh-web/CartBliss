@@ -3,6 +3,7 @@ import "react-multi-carousel/lib/styles.css";
 import "../../assets/scss/Carousel.scss";
 
 const CarouselSlider = (props) => {
+  console.log(props.topMobileData);
   return (
     <>
       <Carousel

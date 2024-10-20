@@ -21,56 +21,56 @@ const responsive = {
 
 const topMobileData = [
   {
-    key: 0,
+    key: "m0",
     url: "images/mobile/mb-1.webp",
     name: "Samsung",
     price: "20000",
   },
   {
-    key: 1,
+    key: "m1",
     url: "images/mobile/mb-2.webp",
     name: "LG",
     price: "18000",
   },
   {
-    key: 2,
+    key: "m2",
     url: "images/mobile/mb-3.webp",
     name: "Xiaomi",
     price: "15000",
   },
   {
-    key: 3,
+    key: "m3",
     url: "images/mobile/mb-4.webp",
     name: "Oppo",
     price: "14000",
   },
 
   {
-    key: 4,
+    key: "m4",
     url: "images/mobile/mb-5.webp",
     name: "Realme",
     price: "15000",
   },
   {
-    key: 5,
+    key: "m5",
     url: "images/mobile/mb-6.webp",
     name: "Lava",
     price: "12000",
   },
   {
-    key: 6,
+    key: "m6",
     url: "images/mobile/mb-7.webp",
     name: "Samsung",
     price: "15000",
   },
   {
-    key: 7,
+    key: "m7",
     url: "images/mobile/mb-8.webp",
     name: "LG",
     price: "17000",
   },
   {
-    key: 8,
+    key: "m8",
     url: "images/mobile/mb-9.webp",
     name: "Xiaomi",
     price: "18000",
