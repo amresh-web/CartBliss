@@ -5,7 +5,7 @@ import images from "../../assets/images/mobile/mb-1.webp";
 
 const Products = ({ data }) => {
   const imageUrl = `http://localhost:4000/images/${data[0]?.images[0]}`;
-  console.log(data[0]?.images[0]);
+  console.log(data[6]?.images[0]);
   return (
     <>
       {data && data.length > 0 ? (
@@ -19,13 +19,15 @@ const Products = ({ data }) => {
                 <div className="w-100" key={""}>
                   <div className={[style.card_imag, "text-center"].join(" ")}>
                     {category.images.map((image, index) => (
-                      <img
-                        key={index}
-                        //src={`http://localhost:4000${image}`}
-                        src={imageUrl}
-                        className={["mh-100 mw-100"].join(" ")}
-                        alt={""}
-                      />
+                      <>
+                        {console.log("am", image)}
+                        <img
+                          key={index}
+                          src={`http://localhost:4000/images/${image}`}
+                          className={["mh-100 mw-100"].join(" ")}
+                          alt={""}
+                        />
+                      </>
                     ))}
                   </div>
                   <div

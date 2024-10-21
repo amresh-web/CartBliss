@@ -3,7 +3,6 @@ import "react-multi-carousel/lib/styles.css";
 import "../../assets/scss/Carousel.scss";
 
 const CarouselSlider = (props) => {
-  console.log(props.topMobileData);
   return (
     <>
       <Carousel
@@ -18,18 +17,13 @@ const CarouselSlider = (props) => {
       >
         {props.topMobileData.map((data, index) => {
           return (
-            <>
-              <div
-                className={["slider", props.customClass].join(" ")}
-                key={data.key}
-              >
+            <div className="w-100" key={data.key}>
+              <div className={["slider", props.customClass].join(" ")}>
                 <img src={data.url} alt="movie" />
               </div>
-              <h5 key={index} className={"mt-4"}>
-                {data.name}
-              </h5>
-              <h6 key={`price${index}`}>{data.price}</h6>
-            </>
+              <h5 className={"mt-4"}>{data.name}</h5>
+              <h6>{data.price}</h6>
+            </div>
           );
         })}
       </Carousel>

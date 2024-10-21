@@ -46,26 +46,38 @@ const AddProduct = () => {
     const { name, value } = e.target;
     setAddProduct({ ...addProduct, [name]: value });
   };
+
   const handleUploadFile = (e) => {
     const files = Array.from(e.target.files);
     setAddProduct({ ...addProduct, images: files });
     console.log(typeof files);
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("name", addProduct.productName);
     formData.append("brand", brandId);
-    formData.append("processor", addProduct.processorType);
-    formData.append("ram", addProduct.ram);
-    formData.append("storage", addProduct.storage);
-    formData.append("price", addProduct.price);
-    formData.append("color", addProduct.color);
-    formData.append("discount_price", addProduct.discountprice);
-    formData.append(" discount_percentage", addProduct.percentage);
-    addProduct.images.forEach((image) => {
-      formData.append("images", image);
-    });
+
+    const specifications = {
+      processor: addProduct.processorType,
+      ram: addProduct.ram,
+      storage: addProduct.storage,
+      color: addProduct.color,
+      price: addProduct.price,
+      discount_price: addProduct.discountprice,
+      discount_percentage: addProduct.percentage,
+    };
+
+    // Append specifications as a JSON string
+    formData.append("specifications", JSON.stringify(specifications));
+
+    if (addProduct.images && addProduct.images.length > 0) {
+      addProduct.images.forEach((image) => {
+        formData.append("images", image); // Ensure 'image' is a file object
+      });
+    }
+
     // for (let [key, value] of formData.entries()) {
     //     console.log(key, value);
     //   }
