@@ -9,7 +9,6 @@ const QuickLinks = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isLoggedIn = useSelector((state) => state.auth.status);
-  console.log(isLoggedIn);
 
   const handleLogout = async () => {
     try {
