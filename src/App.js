@@ -82,7 +82,7 @@ function App() {
         },
         { path: "category", element: <SellerCategory /> },
         { path: "brand", element: <Sellerbrand /> },
-        { path: "model", element: <SellerModel /> },
+        //{ path: "model", element: <SellerModel /> },
       ],
     },
     {

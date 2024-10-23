@@ -18,7 +18,6 @@ const title = "Smart Phones";
 const SmartPhones = () => {
   const categoryId = CatMapper();
   const [catData, SetCatData] = useState([]);
-  const [images, setImages] = useState([]);
 
   useEffect(() => {
     const fetchCategoryData = async () => {
@@ -27,7 +26,6 @@ const SmartPhones = () => {
           `${process.env.REACT_APP_BASE_URL}/category/getcategory/${categoryId}/getallmodel`
         );
         if (res.status === 200) {
-          console.log(res.data[6].images[0]);
           SetCatData(res.data);
         }
       } catch (err) {
